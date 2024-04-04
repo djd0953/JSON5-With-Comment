@@ -8,22 +8,30 @@
     }
     
     text: type to JSON5
+  
     reviver: npm json5 문서 참조
-    
+
+
     val: parsed object
+  
     commant: 주석
+  
     hexValueOfKey: hex로 되어있던 Key값 (type, stype은 개인적으로 사용하기 위해 만듬)
+  
     {type: number, stype: number, key: string}
 
 2.
     stringify(object, option): string
     
     object: java script 형식의 object
+  
     option: {comment: object와 mapping되는 object(object stringify 후 comment stringify), hexKeywords: hex로 만들 Key}
+  
     {
       comment: object,
       hexKeywords: object[]
     }
+
 
 - stringify 할때 key값이 number일 경우 hex로 변환함! (수정할 생각 없음)
 - stringify 할때 option.hexKeywords에서 mapping되는 key name을 찾고 있으면 hex로 변환함
