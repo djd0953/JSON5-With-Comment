@@ -1,29 +1,29 @@
 ~ key값이 hex로 되어있을때 parse를 못한다는 점과 기존 open souce(npm) 'json5'는 주석이 있어도 무시하고 object화 시키지만 주석도 parse해서 사용하고 싶어서 수정함 ~
 
 1.
-parse(text, reviver) : {
-  val: object,
-  commant: object,
-  hexValueOfKey: object[]
-}
-
-text: type to JSON5
-reviver: npm json5 문서 참조
-
-val: parsed object
-commant: 주석
-hexValueOfKey: hex로 되어있던 Key값 (type, stype은 개인적으로 사용하기 위해 만듬)
-{type: number, stype: number, key: string}
+    parse(text, reviver) : {
+      val: object,
+      commant: object,
+      hexValueOfKey: object[]
+    }
+    
+    text: type to JSON5
+    reviver: npm json5 문서 참조
+    
+    val: parsed object
+    commant: 주석
+    hexValueOfKey: hex로 되어있던 Key값 (type, stype은 개인적으로 사용하기 위해 만듬)
+    {type: number, stype: number, key: string}
 
 2.
-stringify(object, option): string
-
-object: java script 형식의 object
-option: {comment: object와 mapping되는 object(object stringify 후 comment stringify), hexKeywords: hex로 만들 Key}
-{
-  comment: object,
-  hexKeywords: object[]
-}
+    stringify(object, option): string
+    
+    object: java script 형식의 object
+    option: {comment: object와 mapping되는 object(object stringify 후 comment stringify), hexKeywords: hex로 만들 Key}
+    {
+      comment: object,
+      hexKeywords: object[]
+    }
 
 - stringify 할때 key값이 number일 경우 hex로 변환함! (수정할 생각 없음)
 - stringify 할때 option.hexKeywords에서 mapping되는 key name을 찾고 있으면 hex로 변환함
